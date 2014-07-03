@@ -5,6 +5,7 @@
     <persistence-unit name="JpaScala" transaction-type="RESOURCE_LOCAL">
 <!--         <exclude-unlisted-classes>false</exclude-unlisted-classes> -->
 		<class>com.gramer.customer.Customer</class>
+		<class>com.gramer.address.Person</class>		
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
     </persistence-unit>
 

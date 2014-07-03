@@ -2,14 +2,6 @@ package com.gramer.customer
 
 import org.springframework.context.support.ClassPathXmlApplicationContext
 
-/**
- * User: phildebrand
- * Created by IntelliJ IDEA.
- * Date: 4/5/11
- * Time: 11:02 AM
- * To change this template use File | Settings | File Templates.
- */
-
 object JpaScala {
 
     def main(args: Array[String]) {

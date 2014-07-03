@@ -3,12 +3,13 @@ package com.gramer.address
 import org.specs._
 import com.gramer.address._
 import org.springframework.orm.jpa.vendor.Database
+import java.util.Date
 
 object AddressBookTest extends Specification {
 
     val book: AddressBook = new AddressBook(
-        new Person("kkj", 10),
-        new Person("lee", 30))
+        new Person("kkj", createBirthday(1960)),
+        new Person("lee", createBirthday(1991)))
 
     "AddressBook " should {
         "find Adults" in {
@@ -21,9 +22,16 @@ object AddressBookTest extends Specification {
         }
 
         "add" in {
-            book.add(new Person("ppp", 33))
+            book.add(new Person("ppp", new Date()))
             book.findAll().length mustEqual 3
         }
+    }
+    
+    def createBirthday(year:Int):Date = {
+        var result:Date = new Date()
+        result.setYear(1981)
+        
+        return result
     }
     
 }
