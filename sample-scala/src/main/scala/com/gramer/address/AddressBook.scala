@@ -7,14 +7,12 @@ class AddressBook(p: Person*) {
         people.filter((p: Person) => p.age > 20)
     }
 
-    def add(p: Person): Unit = {
-        people = people.+:(p)
-    }
+    def add(p: Person): Unit = { people = p :: people }
 
     def findAll(): List[Person] = people
 
     def findByName(n: String): List[Person] = {
-        people.filter((p: Person) => p.name == n)
+        people filter ((p: Person) => p.name == n)
     }
 
 }

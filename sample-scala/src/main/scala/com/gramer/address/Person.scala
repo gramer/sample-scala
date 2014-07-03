@@ -1,3 +1,8 @@
 package com.gramer.address
 
-case class Person(name:String, age:Int)
+class Person(n: String, a: Int, e: Option[String] = None) {
+    
+    var age: Int = a
+    var name: String = n
+    var email: String = e.getOrElse("")
+}

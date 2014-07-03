@@ -2,12 +2,13 @@ package com.gramer.address
 
 import org.specs._
 import com.gramer.address._
+import org.springframework.orm.jpa.vendor.Database
 
 object AddressBookTest extends Specification {
 
     val book: AddressBook = new AddressBook(
-        Person("kkj", 10),
-        Person("lee", 30))
+        new Person("kkj", 10),
+        new Person("lee", 30))
 
     "AddressBook " should {
         "find Adults" in {
@@ -20,9 +21,9 @@ object AddressBookTest extends Specification {
         }
 
         "add" in {
-            book.add(Person("ppp", 33))
+            book.add(new Person("ppp", 33))
             book.findAll().length mustEqual 3
         }
     }
-
+    
 }

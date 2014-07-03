@@ -45,5 +45,9 @@ object collection {
     numbers
     	.filter((i) => i % 2 == 0)
     	.foldLeft(0) { (m, n) => m + n }          //> res10: Int = 6
+    	
+    List(1,2,3,4).map((i => i * 2))               //> res11: List[Int] = List(2, 4, 6, 8)
+    
+    List(1, 2, 3).zip(List("a", "b", "c"))        //> res12: List[(Int, String)] = List((1,a), (2,b), (3,c))
 
 }
