@@ -18,16 +18,16 @@ class CustomerDaoImpl extends CustomerDao {
         case _ => entityManager.merge(customer)
     }
 
-    def find(id: Int): Option[Customer] = entityManager.find(classOf[Customer], id) match {
+    def select(id: Int): Option[Customer] = entityManager.find(classOf[Customer], id) match {
         case null => None
         case customer => Some(customer)
     }
 
-    def getAll: List[Customer] = {
+    def selectAll: List[Customer] = {
         entityManager.createQuery("From Customer", classOf[Customer]).getResultList.toList
     }
 
-    def getByLastName(lastName : String): List[Customer] = {
+    def selectByLastName(lastName : String): List[Customer] = {
         entityManager.createQuery("From Customer Where lastName = :lastName", classOf[Customer]).setParameter("lastName", lastName).getResultList.toList
     }
 }

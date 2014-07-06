@@ -15,12 +15,12 @@ object JpaScala {
         dao.save(new Customer("Jan", "Jansen"))
         dao.save(new Customer("Peter", "Jansen"))
 
-        println(dao.getAll)
-        println(dao.getByLastName("Jansen"))
-        println(dao.getByLastName("Hildebrand"))
+        println(dao.selectAll)
+        println(dao.selectByLastName("Jansen"))
+        println(dao.selectByLastName("Hildebrand"))
 
         (1 to 10) foreach (y =>
-            dao.find(y) match {
+            dao.select(y) match {
                 case Some(x) => println(x)
                 case None => println("No customer found with id " + y)
             })

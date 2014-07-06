@@ -1,11 +1,12 @@
 package com.gramer.customer
 
 trait CustomerDao {
-    def save(customer: Customer): Unit
+  def save(customer: Customer): Unit
 
-    def find(id: Int): Option[Customer]
+  def select(id: Int): Option[Customer]
 
-    def getAll: List[Customer]
+  def selectAll: List[Customer]
 
-    def getByLastName(lastName : String): List[Customer]
+  def selectByLastName(lastName: String): List[Customer]
+
 }

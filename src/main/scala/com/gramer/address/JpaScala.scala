@@ -20,11 +20,11 @@ object JpaScala {
         dao.save(new Person("김오순", new Date()))
         dao.save(new Person("김육순", new Date()))
 
-        println(dao.findAll)
-        println(dao.findByName("김경준"))
+        println(dao.selectAll)
+        println(dao.selectByName("김경준"))
 
         (1 to 10) foreach (y =>
-            dao.find(y) match {
+            dao.select(y) match {
                 case Some(x) => println(x)
                 case None => println("No Person found with id " + y)
             })

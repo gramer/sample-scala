@@ -4,11 +4,13 @@ import javax.persistence.Entity
 import javax.persistence.Table
 
 trait PersonDao {
-    def save(Person: Person): Unit
+  def save(Person: Person): Unit
 
-    def find(id: Int): Option[Person]
+  def select(id: Int): Option[Person]
 
-    def findAll: List[Person]
+  def selectAll: List[Person]
 
-    def findByName(name : String): List[Person]
+  def selectByName(name: String): List[Person]
+
+  def delete(id: Int): Unit
 }
