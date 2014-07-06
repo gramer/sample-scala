@@ -1,7 +1,9 @@
 package com.gramer.address
 
 import scala.reflect.BeanProperty
+
 import javax.persistence._
+
 import java.util.Date
 
 @Entity
@@ -22,8 +24,14 @@ class Person(n: String, d: Date, e: Option[String] = None) {
     @BeanProperty    
     var email: String = e.getOrElse("")
     
-    def age() = new Date().getYear - birthday.getYear() + 1
+    def age() = new Date().getYear() - birthday.getYear() + 1
     
     def this() = this (null, null)
+    
+    override def toString():String = {
+      "name:%s birthday:%s" format (this.name, this.birthday)
+    }
+    
 
 }
+
