@@ -3,11 +3,11 @@ sample-scala
 
 study for scala
 
-**Required Environment
+**Required Environment**
 * installed SBT
 * set eclipse plugin in SBT
 
-** Import Eclipse
+**Import Eclipse**
 * git clone
 * sbt update eclipse 
 
